@@ -6,7 +6,7 @@ before_install:
   - docker build -t silvanhab/react-test:latest -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run silvanhab/react-test npm run test -- --coverage
+  - docker run -e CI=true silvanhab/react-test npm run test -- --coverage
 
 after_success:
   - docker build -t silvanhab/multi-client:latest ./client
@@ -19,4 +19,4 @@ after_success:
   - docker push silvanhab/multi-client
   - docker push silvanhab/multi-nginx
   - docker push silvanhab/multi-server
-  - docker push silvanhab/multi-worker
+  - docker push silvanhab/multi-workercd
