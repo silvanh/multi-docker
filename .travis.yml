@@ -19,4 +19,4 @@ after_success:
   - docker push silvanhab/multi-client
   - docker push silvanhab/multi-nginx
   - docker push silvanhab/multi-server
-  - docker push silvanhab/multi-workercd
+  - docker push silvanhab/multi-worker
